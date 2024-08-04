@@ -27,6 +27,11 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-tree.lua')
   use('kyazdani42/nvim-web-devicons')
   use('nvim-lualine/lualine.nvim')
+ 
+  -- Formatting & linting
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('jayp0521/mason-null-ls.nvim')
+
   use {
 	'VonHeikemen/lsp-zero.nvim',
 	requires = {
