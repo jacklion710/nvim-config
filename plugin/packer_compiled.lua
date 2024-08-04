@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/jake/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/jake/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -163,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/jake/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -194,6 +209,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jake/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["typescript.nvim"] = {
+    loaded = true,
+    path = "/home/jake/.local/share/nvim/site/pack/packer/start/typescript.nvim",
+    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
   undotree = {
     loaded = true,

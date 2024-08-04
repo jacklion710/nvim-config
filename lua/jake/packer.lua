@@ -35,6 +35,16 @@ return require('packer').startup(function(use)
   -- Auto closing
   use('windwp/nvim-autopairs')
   use('windwp/nvim-ts-autotag')
+  use('jose-elias-alvarez/typescript.nvim')
+
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }) -- enhanced lsp uis
 
   use {
 	'VonHeikemen/lsp-zero.nvim',

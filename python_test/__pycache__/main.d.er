@@ -1,0 +1,8 @@
+##[pylyzer] failed /home/jake/.config/nvim/python_test/main.py 1722808770 555
+.___v_desugar_1 = pyimport "my_module"
+.my_module = pyimport "my_module"
+.calculate_area: (length: Float, width: Float) -> Float
+.greet: (name: Str) -> Str
+.is_prime: (number: Int) -> Bool
+.main: () -> NoneType
+

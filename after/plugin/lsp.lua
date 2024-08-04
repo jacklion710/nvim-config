@@ -1,35 +1,67 @@
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('user_lsp_attach', {clear = true}),
-  callback = function(event)
-    local opts = {buffer = event.buf}
+-- import required plugins
+local lspconfig = require("lspconfig")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local typescript = require("typescript")
 
-    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end, opts)
-    vim.keymap.set('n', '<leader>vd', function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set('n', '[d', function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set('n', '<leader>vca', function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-  end,
-})
+local keymap = vim.keymap -- for conciseness
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- enable keybinds only for when lsp server available
+local on_attach = function(client, bufnr)
+  local opts = { noremap = true, silent = true, buffer = bufnr }
 
+  -- set keybinds
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+  keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+  keymap.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end, opts)
+  keymap.set('n', '<leader>vd', function() vim.diagnostic.open_float() end, opts)
+  keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
+  keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
+
+  -- typescript specific keymaps
+  if client.name == "tsserver" then
+    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
+    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
+    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>")
+  end
+end
+
+-- used to enable autocompletion
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+-- Change the Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+-- configure mason
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'clangd', 'dockerls', 'yamlls', 'jsonls', 'html', 'cssls', 'bashls', 'marksman', 'glsl_analyzer', },
+  ensure_installed = {'tsserver', 'rust_analyzer', 'clangd', 'dockerls', 'yamlls', 'jsonls', 'html', 'cssls', 'bashls', 'marksman', 'glsl_analyzer'},
   handlers = {
     function(server_name)
-      require('lspconfig')[server_name].setup({
-        capabilities = lsp_capabilities,
+      lspconfig[server_name].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
       })
     end,
+    
+    -- special setup for lua_ls
     lua_ls = function()
-      require('lspconfig').lua_ls.setup({
-        capabilities = lsp_capabilities,
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
         settings = {
           Lua = {
             runtime = {
@@ -50,11 +82,25 @@ require('mason-lspconfig').setup({
   }
 })
 
+-- configure typescript server with plugin
+typescript.setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
+})
+
+-- configure emmet language server
+lspconfig["emmet_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
+-- setup cmp
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
--- this is the function that loads the extra snippets to luasnip
--- from rafamadriz/friendly-snippets
 require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
