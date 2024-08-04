@@ -32,6 +32,10 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use('jayp0521/mason-null-ls.nvim')
 
+  -- Auto closing
+  use('windwp/nvim-autopairs')
+  use('windwp/nvim-ts-autotag')
+
   use {
 	'VonHeikemen/lsp-zero.nvim',
 	requires = {
