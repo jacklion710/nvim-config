@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('nvim-tree/nvim-tree.lua')
+  use('kyazdani42/nvim-web-devicons')
+  use('nvim-lualine/lualine.nvim')
   use {
 	'VonHeikemen/lsp-zero.nvim',
 	requires = {
