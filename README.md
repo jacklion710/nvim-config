@@ -19,6 +19,7 @@ I followed [The Primeagens](https://www.youtube.com/@ThePrimeagen) tutorial for 
 
 1. Backup your existing Neovim configuration if you have one.
 2. Clone this repository: `git clone https://github.com/yourusername/nvim-config.git ~/.config/nvim`
+   NOTE: if you are on Windows or are using WSL then your destination path may be different. The above command is meant for Unix systems.
 3. Install [Packer](https://github.com/wbthomason/packer.nvim) (plugin manager)
 4. Open Neovim and run `:PackerSync` to install the plugins
 
