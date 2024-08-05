@@ -59,3 +59,13 @@ vim.api.nvim_create_user_command("RunPython", "w !python3 %", {})
 
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+
+-- Toggle focus between explorer tree and file contents
+vim.keymap.set("n", "<C-n>", function()
+	local nvim_tree_focused = vim.bo.filetype == "NvimTree"
+	if nvim_tree_focused then
+		vim.cmd("wincmd l")
+	else
+		vim.cmd("wincmd h")
+	end
+end, { silent = true, desc = "Toggle focus between NvimTree and file content" })
