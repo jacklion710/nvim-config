@@ -26,13 +26,7 @@ I followed [The Primeagens](https://www.youtube.com/@ThePrimeagen) tutorial for 
 
 ## Key Mappings
 
-Most of the key mappings follow The Primeagen's setup. For a comprehensive list, please refer to the files in `nvim/lua/jake/`. Some notable mappings include:
-
-- `<leader>pv`: Open file explorer
-- `<leader>ff`: Find files with Telescope
-- `<C-p>`: Git files with Telescope
-
-(I will document more key mappings soon)
+All custom key mappings are documented `in nvim/cheatsheet.md`.
 
 ## Plugins
 
