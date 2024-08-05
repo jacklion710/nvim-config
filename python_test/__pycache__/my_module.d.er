@@ -1,4 +1,0 @@
-##[pylyzer] failed /home/jake/.config/nvim/python_test/my_module.py 1722808597 496
-.greet: (name: Str) -> Str
-.calculate_area: (length: Float, width: Float) -> Float
-.is_prime: (number: Int) -> Bool

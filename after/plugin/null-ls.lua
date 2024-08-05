@@ -21,9 +21,9 @@ null_ls.setup({
     formatting.stylua, -- lua formatter
     formatting.rustfmt,
     formatting.clang_format,
-    formatting.black, -- python formatter
-    formatting.isort, -- python import sorter
-    diagnostics.flake8, -- python linter
+--    formatting.black, -- python formatter
+--    formatting.isort, -- python import sorter
+--    diagnostics.flake8, -- python linter
     formatting.gofmt, -- go formatter
     formatting.goimports, -- go import sorter
     diagnostics.golangci_lint, -- go linter
