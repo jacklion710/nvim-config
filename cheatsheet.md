@@ -4,8 +4,6 @@
 
 `<leader>pv` : Toggle NvimTree
 
-`<leader>e` : Toggle NvimTree (duplicate)
-
 `<C-n>` : Toggle focus between NvimTree and file content
 
 `<C-w>h` : Move focus to NvimTree
@@ -66,7 +64,7 @@
 
 `<leader>Y` : Yank line to system clipboard
 
-`<leader>d` : Delete without yanking
+`<leader>D` : Delete without yanking
 
 `<C-c>` : Exit insert mode (alternative to Esc)
 
@@ -134,7 +132,7 @@
 
 ## LSP Keybindings
 
-`gf` : LSP finder
+`<leader>lf` : LSP finder
 
 `gD` : Go to declaration
 
@@ -154,7 +152,7 @@
 
 `]d` : Jump to next diagnostic
 
-`K` : Hover documentation
+`gh` : Hover documentation
 
 `<leader>o` : Toggle outline
 
@@ -173,3 +171,42 @@
 `<leader>oi` : Organize imports
 
 `<leader>ru` : Remove unused
+
+## Git (Fugitive)
+
+`<leader>gs` : Open Git status
+
+## Harpoon
+
+`<leader>a` : Add file to Harpoon
+
+`<C-e>` : Toggle quick menu
+
+`<C-h1>` : Navigate to file 1
+
+`<C-h2>` : Navigate to file 2
+
+`<C-h3>` : Navigate to file 3
+
+`<C-h4>` : Navigate to file 4
+
+## Telescope
+
+`<leader>ff` : Find files
+
+`<C-p>` : Git files
+
+`<leader>ps` : Grep string (prompts for input)
+Undotree
+
+`<leader>u` : Toggle Undotree
+
+## Autocomplete (cmp)
+
+`<C-p>` : Select previous item
+
+`<C-n>` : Select next item
+
+`<CR>` : Confirm selection
+
+`<C-Space>` : Complete
