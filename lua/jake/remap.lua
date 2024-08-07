@@ -47,12 +47,8 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 
 -- Cellular Automaton
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 vim.keymap.set("n", "<leader>sc", "<cmd>CellularAutomaton scramble<CR>")
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end)
 
 -- Python runner alias
 vim.api.nvim_create_user_command("RunPython", "w !python3 %", {})

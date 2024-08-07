@@ -2,172 +2,174 @@
 
 ## File Explorer (NvimTree)
 
-<leader>pv : Toggle NvimTree
+`<leader>pv` : Toggle NvimTree
 
-<leader>e : Toggle NvimTree (duplicate)
+`<leader>e` : Toggle NvimTree (duplicate)
 
-<C-n> : Toggle focus between NvimTree and file content
+`<C-n>` : Toggle focus between NvimTree and file content
 
-<C-w>h : Move focus to NvimTree
+`<C-w>h` : Move focus to NvimTree
 
-<C-w>l : Move focus to file content
+`<C-w>l` : Move focus to file content
 
-a : Add new file/directory
+`a` : Add new file/directory
 
-o : Create new file
+`o` : Create new file
 
-O : Create new directory
+`O` : Create new directory
 
-d : Delete file/directory
+`d` : Delete file/directory
 
-r : Rename file/directory
+`r` : Rename file/directory
 
-m : Move file/directory (then navigate and press 'p')
+`m` : Move file/directory (then navigate and press 'p')
 
-x : Cut file/directory
+`x` : Cut file/directory
 
-p : Paste file/directory
+`p` : Paste file/directory
 
-y : Copy file/directory name
+`y` : Copy file/directory name
 
-Y : Copy relative path
+`Y` : Copy relative path
 
-gy : Copy absolute path
+`gy` : Copy absolute path
 
-<C-v> : Open file in vertical split
+`<C-v>` : Open file in vertical split
 
-<C-x> : Open file in horizontal split
+`<C-x>` : Open file in horizontal split
 
-<C-t> : Open file in new tab
+`<C-t>` : Open file in new tab
 
-<CR> : Open file
+`<CR>` : Open file
 
-R : Refresh NvimTree
+`R` : Refresh NvimTree
 
 ## Movement and Editing
 
-J (visual) : Move selected lines down
+`J` (visual) : Move selected lines down
 
-K (visual) : Move selected lines up
+`K` (visual) : Move selected lines up
 
-J (normal) : Join lines and keep cursor in place
+`J` (normal) : Join lines and keep cursor in place
 
-<C-d> : Scroll down and center cursor
+`<C-d>` : Scroll down and center cursor
 
-<C-u> : Scroll up and center cursor
+`<C-u>` : Scroll up and center cursor
 
-n : Next search result and center view
+`n` : Next search result and center view
 
-N : Previous search result and center view
+`N` : Previous search result and center view
 
-<leader>p : Paste without yanking deleted text
+`<leader>p` : Paste without yanking deleted text
 
-<leader>y : Yank to system clipboard
+`<leader>y` : Yank to system clipboard
 
-<leader>Y : Yank line to system clipboard
+`<leader>Y` : Yank line to system clipboard
 
-<leader>d : Delete without yanking
+`<leader>d` : Delete without yanking
 
-<C-c> : Exit insert mode (alternative to Esc)
+`<C-c>` : Exit insert mode (alternative to Esc)
 
 ## LSP and Formatting
 
-<leader>zig : Restart LSP
+`<leader>zig` : Restart LSP
 
-<leader>f : Format buffer
+`<leader>f` : Format buffer
 
 ## Navigation
 
-<C-k> : Next quickfix item
+`<C-k>` : Next quickfix item
 
-<C-j> : Previous quickfix item
+`<C-j>` : Previous quickfix item
 
-<leader>k : Next location list item
+`<leader>k` : Next location list item
 
-<leader>j : Previous location list item
+`<leader>j` : Previous location list item
 
 ## Search and Replace
 
-<leader>s : Search and replace word under cursor
+`<leader>s` : Search and replace word under cursor
 
 ## File Operations
 
-<leader>x : Make current file executable
+`<leader>x` : Make current file executable
 
 ## Code Snippets
 
-<leader>ee : Insert error handling snippet (Go)
+`<leader>ee` : Insert error handling snippet (Go)
 
 ## Configuration
 
-<leader>vpp : Open Packer configuration file
+`<leader>vpp` : Open Packer configuration file
 
-<leader>cs : Open this cheat sheet
+`<leader>cs` : Open this cheat sheet
 
 ## Miscellaneous
 
-Q : No operation (disabled)
+`Q` : No operation (disabled)
 
-<C-f> : Open tmux sessionizer
+`<C-f>` : Open tmux sessionizer
 
-<leader><leader> : Source current file
+`<leader><leader>` : Source current file
 
-RunPython : Run current Python file
+`RunPython` : Run current Python file
 
 ## Cellular Automaton Effects
 
-<leader>mr : Trigger "make it rain" effect
+`<leader>mr` : Trigger "make it rain" effect
 
-<leader>mR : Reset file to last saved state
+`<leader>gol` : Conways Game of Life
+
+`<leader>sc` : Scramble
 
 ## Undo/Redo
 
-u : Undo last change
+`u` : Undo last change
 
-<C-r>: Redo last undone change
+`<C-r>`: Redo last undone change
 
-g- : Go to older text state
+`g-` : Go to older text state
 
-g+ : Go to newer text state
+`g+` : Go to newer text state
 
 ## LSP Keybindings
 
-gf : LSP finder
+`gf` : LSP finder
 
-gD : Go to declaration
+`gD` : Go to declaration
 
-gd : Peek definition
+`gd` : Peek definition
 
-gi : Go to implementation
+`gi` : Go to implementation
 
-<leader>ca : Code action
+`<leader>ca` : Code action
 
-<leader>rn : Rename
+`<leader>rn` : Rename
 
-<leader>D : Show line diagnostics
+`<leader>D` : Show line diagnostics
 
-<leader>d : Show cursor diagnostics
+`<leader>d` : Show cursor diagnostics
 
-[d : Jump to previous diagnostic
+`[d` : Jump to previous diagnostic
 
-]d : Jump to next diagnostic
+`]d` : Jump to next diagnostic
 
-K : Hover documentation
+`K` : Hover documentation
 
-<leader>o : Toggle outline
+`<leader>o` : Toggle outline
 
-<leader>vws : Workspace symbol
+`<leader>vws` : Workspace symbol
 
-<leader>vd : Open float
+`<leader>vd` : Open float
 
-<leader>vrr : References
+`<leader>vrr` : References
 
-<C-h> (insert) : Signature help
+`<C-h> (insert)` : Signature help
 
 ## TypeScript Specific
 
-<leader>rf : Rename file
+`<leader>rf` : Rename file
 
-<leader>oi : Organize imports
+`<leader>oi` : Organize imports
 
-<leader>ru : Remove unused
+`<leader>ru` : Remove unused
