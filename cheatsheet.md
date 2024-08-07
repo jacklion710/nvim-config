@@ -182,13 +182,13 @@
 
 `<C-e>` : Toggle quick menu
 
-`<C-h1>` : Navigate to file 1
+`<leader>h1` : Navigate to file 1
 
-`<C-h2>` : Navigate to file 2
+`<leader>h2` : Navigate to file 2
 
-`<C-h3>` : Navigate to file 3
+`<leader>h3` : Navigate to file 3
 
-`<C-h4>` : Navigate to file 4
+`<leader>h4` : Navigate to file 4
 
 ## Telescope
 
@@ -207,6 +207,6 @@ Undotree
 
 `<C-n>` : Select next item
 
-`<CR>` : Confirm selection
+`<C-R>` : Confirm selection
 
 `<C-Space>` : Complete
