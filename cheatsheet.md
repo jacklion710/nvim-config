@@ -210,3 +210,31 @@ Undotree
 `<C-R>` : Confirm selection
 
 `<C-Space>` : Complete
+
+## Debugging (DAP)
+
+`<leader>%` : Continue
+
+`<leader>^` : Step over
+
+`<leader>&` : Step into
+
+`<leader>*` : Step out
+
+`<leader>dbb` : Toggle breakpoint
+
+`<leader>dbB` : Set breakpoint
+
+`<leader>dbl` : Set logpoint
+
+`<leader>dbr` : Open REPL
+
+`<leader>dbc` : Run last
+
+`<leader>dbh` : Hover (variables)
+
+`<leader>dbp` : Preview
+
+`<leader>dbf` : Show frames
+
+`<leader>dbs` : Show scopes

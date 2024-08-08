@@ -40,6 +40,12 @@ return require("packer").startup(function(use)
 
 	-- Cellular Automaton
 	use("eandrju/cellular-automaton.nvim")
+
+	-- Debugger (DAP)
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+	use("mfussenegger/nvim-dap-python")
+
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",

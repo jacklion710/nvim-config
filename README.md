@@ -1,4 +1,4 @@
-# My Neovim Configuration
+:# My Neovim Configuration
 
 Just keeping track of my nvim config with github. That way I can synchronize changes across many different machines.
 
