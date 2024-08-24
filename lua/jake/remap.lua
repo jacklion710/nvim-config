@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 vim.keymap.set("n", "<leader>sc", "<cmd>CellularAutomaton scramble<CR>")
 
 -- Python runner alias
-vim.api.nvim_create_user_command("RunPython", "w !python3 %", {})
+vim.api.nvim_create_user_command("Runpy", "write | !python3 %", {})
 
 -- Toggle focus between explorer tree and file contents
 vim.keymap.set("n", "<C-n>", function()

@@ -110,7 +110,7 @@
 
 `<leader><leader>` : Source current file
 
-`RunPython` : Run current Python file
+`runpy` : Run current Python file
 
 ## Cellular Automaton Effects
 
